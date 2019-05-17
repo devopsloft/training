@@ -1,0 +1,40 @@
+version: '3'
+services:
+  vault-in-mem:
+    image: vault:1.1.2
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "TEST"
+  vault-in-mem-cli:
+    image: vault:1.1.2
+    cap_add:
+      - IPC_LOCK
+    links:
+      - vault-in-mem:vault
+    environment:
+      VAULT_ADDR: "http://vault:8200"
+      VAULT_TOKEN: "TEST"
+  vault-file-storage:
+    image: vault:1.1.2
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - ./vault-file-backend.hcl:/vault/config.hcl
+      - ./data:/vault/data:rw
+    environment:
+      - VAULT_API_ADDR=http://0.0.0.0:8200
+    command:
+      - "server"
+      - "-config"
+      - "/vault/config.hcl"
+  vault-file-cli:
+    image: vault:1.1.2
+    cap_add:
+      - IPC_LOCK
+    links:
+      - vault-file-storage:vault
+    environment:
+      VAULT_ADDR: "http://vault:8200"
+  mysql:
+    image: mysql:5.7
