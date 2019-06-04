@@ -5,7 +5,7 @@
 
 ## Level 1
 * clone - downloads an existing Git repository to your local computer.
-    **Task**: Clone [this](https://github.com/devopsloft/training) Repository to your local machine
+<br>**Task**: Clone [this](https://github.com/devopsloft/training) Repository to your local machine
     <details>
      <summary>Solution</summary>
       
