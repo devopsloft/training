@@ -1,0 +1,22 @@
+version: '3'
+services:
+  vault:
+    image: vault:1.1.2
+    container_name: vault
+    cap_add:
+      - IPC_LOCK
+    ports:
+      - 8200:8200
+    volumes:
+      - ./s3-config.hcl:/vault/config/config.hcl
+    command: server
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+  vault-cli:
+    image: vault:1.1.2
+    container_name: vault-cli
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_ADDR: "http://vault:8200"
