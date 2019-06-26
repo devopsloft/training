@@ -1,0 +1,17 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.provision "shell",
+      path: "bootstrap.sh",
+      run: "always"
+  config.vm.provision :docker
+  config.vm.provision :docker_compose,
+    compose_version: "1.24.1",
+    yml: "/vagrant/docker-compose.yml",
+    run: "always"
+  config.vm.network "forwarded_port",
+    guest: 4444,
+    host: 4444
+  config.vm.network "forwarded_port",
+    guest: 5555,
+    host: 5555
+end
