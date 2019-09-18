@@ -17,3 +17,5 @@
 
 ## Hints
 - use "git remote -v" command to check from where you are pushing/pulling
+- use "git branch <branch_name> to create new branch"
+- use "git checkout <branch_name> to switch to new branch"
