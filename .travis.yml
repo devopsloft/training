@@ -1,0 +1,13 @@
+dist: bionic
+
+language: python
+
+python:
+- 3.6
+- 3.8
+
+before_install:
+- pip install flake8
+
+script:
+- flake8 .

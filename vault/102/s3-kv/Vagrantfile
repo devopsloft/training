@@ -1,0 +1,17 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.provision :docker
+  config.vm.provision :docker_compose,
+    compose_version: "1.24.0",
+    yml: "/vagrant/docker-compose.yml",
+    env: { "AWS_ACCESS_KEY_ID" => "#{ENV['AWS_ACCESS_KEY_ID']}",
+           "AWS_SECRET_ACCESS_KEY" => "#{ENV['AWS_SECRET_ACCESS_KEY']}"},
+    run: "always"
+
+  config.vm.provider :virtualbox do |virtualbox|
+    virtualbox.name = "s3-kv"
+  end
+  config.vm.network "forwarded_port",
+          guest: 8200,
+          host:  8200
+end

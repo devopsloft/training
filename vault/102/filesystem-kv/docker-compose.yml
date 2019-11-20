@@ -1,0 +1,20 @@
+version: '3'
+services:
+  vault:
+    image: vault:1.1.2
+    container_name: vault
+    cap_add:
+      - IPC_LOCK
+    ports:
+      - 8200:8200
+    volumes:
+      - ./filesystem-config.hcl:/vault/config/config.hcl
+      - /vault/data:/vault/data:rw
+    command: server
+  vault-cli:
+    image: vault:1.1.2
+    container_name: vault-cli
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_ADDR: "http://vault:8200"

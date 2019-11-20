@@ -1,0 +1,22 @@
+version: '3'
+services:
+  vault:
+    image: vault:1.1.2
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "TEST"
+  vault-cli:
+    image: vault:1.1.2
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_ADDR: "http://vault:8200"
+      VAULT_TOKEN: "TEST"
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql_root_password
+      MYSQL_DATABASE: sample_db
+  mysql-cli:
+    image: mysql:5.7

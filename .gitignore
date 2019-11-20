@@ -1,0 +1,9 @@
+# Terraform state
+.terraform
+*.tfstate*
+
+# Vagrant cache
+.vagrant
+
+# Log files
+*.log

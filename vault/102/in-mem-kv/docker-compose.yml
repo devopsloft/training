@@ -1,0 +1,19 @@
+version: '3'
+services:
+  vault:
+    image: vault:1.1.2
+    container_name: vault
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "loft"
+    ports:
+      - 8200:8200
+  vault-cli:
+    image: vault:1.1.2
+    container_name: vault-cli
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_ADDR: "http://vault:8200"
+      VAULT_TOKEN: "loft"
