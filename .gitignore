@@ -3,7 +3,7 @@
 *.tfstate*
 
 # Vagrant cache
-.vagrant
+**/.vagrant
 
 # Log files
 *.log
