@@ -15,7 +15,6 @@
     </details>
 * commit 
 * push
-* push
 * pull
 * checkout (branches)
 * fetch
