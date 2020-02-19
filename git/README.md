@@ -4,15 +4,8 @@
 * [Git and GitHub workshop for beginners [Video]](https://www.youtube.com/watch?v=dvcMe4z_VrQ&feature=youtu.be)
 
 ## Level 1
-* clone - downloads an existing Git repository to your local computer.
-<br>**Task**: Clone [this](https://github.com/devopsloft/training) Repository to your local machine
-    <details>
-     <summary>Solution</summary>
-      
-    ~~~
-    git clone https://github.com/devopsloft/training
-    ~~~
-    </details>
+* fork  - fork [this](https://github.com/devopsloft/training) repository
+* clone - download the forked GitHub repository to your local computer.
 * commit 
 * push
 * pull
