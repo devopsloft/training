@@ -1,6 +1,9 @@
-Use:
- - "vagrant status" to see the running machines.
- - "vagrant ssh" to ssh the machine. 
+## Check the status of the machine
+~~~
+Vagrant status
+~~~
 
-In case there are more then one machine use:
- - "vagrant ssh {machine_name}" 
+## ssh to running machine 
+~~~
+vagrant ssh
+~~~
