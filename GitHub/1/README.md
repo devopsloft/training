@@ -1,4 +1,4 @@
-# GitHub 101 - challenge
+# GitHub workshop #1, challenge #1
 
 ## System Requirements
 - git
@@ -7,12 +7,13 @@
 ## Challenge
 - Fork devopsloft/training repo
 - Clone it
-- Checkout to a branch
-- Implement a meaningful change to this challenge
+- Checkout to a feature branch
+- Pick up an issue and implement it
 - Submit a PR
 - Pass a code review
 - Verify your PR is merged
-- Update your local and origin repo with the merged changes
+- Sync your local and origin repos with upstream
+- Delete the feature branch
 
 
 ## Hints
