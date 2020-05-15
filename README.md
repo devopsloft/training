@@ -1,6 +1,6 @@
 # <a href="http://www.devopsloft.io">DevOps Loft</a>
 
-[![Build Status](https://travis-ci.org/devopsloft/devopsloft.svg?branch=master)](https://travis-ci.org/devopsloft/training)
+[![Build Status](https://travis-ci.org/devopsloft/training.svg?branch=master)](https://travis-ci.org/devopsloft/training)
 
 <img src="http://www.devopsloft.io/static/logo.png" alt="drawing" width="250" hight="250"/>
 
